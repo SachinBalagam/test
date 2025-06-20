@@ -16,7 +16,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/api/contact', formData);
+      await axios.post('https://test-94dm.onrender.com/api/contact', formData);
       alert('Message sent successfully!');
     } catch (error) {
       console.error('Error sending message:', error);

@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/contact")
-@CrossOrigin(origins = "https://ui-shiva.onrender.com")
+@CrossOrigin(origins = "https://shivaprasadmekala.netlify.app/")
 
 public class ContactController {
 
