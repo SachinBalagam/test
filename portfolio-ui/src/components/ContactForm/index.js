@@ -6,7 +6,6 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    number: '',
     message: '',
   });
 
@@ -17,7 +16,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://contact-api-portfolio-5a2ad4000ccb.herokuapp.com/', formData);
+      await axios.post('http://localhost:8080/api/contact', formData);
       alert('Message sent successfully!');
     } catch (error) {
       console.error('Error sending message:', error);
@@ -42,10 +41,10 @@ const ContactForm = () => {
                   <input className="contact-container" placeholder="Email" type="email" name="email" value={formData.email} onChange={handleChange} />
                 </label>
                 <br />
-                <label>
+                {/* <label>
                   <input className="contact-container" placeholder="Phone Number" type="tel" name="number" value={formData.number} onChange={handleChange} />
                 </label>
-                <br />
+                <br /> */}
               </div>
               <div>
                 <textarea className="contact-container txt" placeholder="Message" name="message" value={formData.message} onChange={handleChange} />
