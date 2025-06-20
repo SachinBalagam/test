@@ -4,14 +4,17 @@ FROM openjdk:17-jdk-slim
 # Set working directory
 WORKDIR /app
 
-# Copy everything into the container
+# Copy everything
 COPY . .
 
-# Build the JAR using Maven wrapper (if you use mvnw)
+# 🔧 Make Maven wrapper executable
+RUN chmod +x mvnw
+
+# Build the JAR
 RUN ./mvnw package -DskipTests
 
-# Expose the port your app runs on
+# Expose port
 EXPOSE 8080
 
-# Run the JAR
+# Run the application
 CMD ["java", "-jar", "target/*.jar"]
